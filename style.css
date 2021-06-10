@@ -29,9 +29,8 @@ text-align: center;
 .cityReport{
     position: absolute;
     background-color: hsl(51, 80%, 46%);
-    height: 300px;
     width: 500px;
-    left: 35%;
+    left: 37%;
     right: 50%;
     top: 25%;
     border-radius: 2%;
