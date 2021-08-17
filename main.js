@@ -14,6 +14,8 @@
 
 //Här hämtar jag in API:et och försöker kommunicera med API sidan och skickar requests till den
 //Fetchar även mitt API call här
+// Vilka bitar i en fetch styr vad? :Beroende på vad jag skriver i inputen "Cityname" så kommer det hämtas olika objekt med hjälp fetch
+// Vart kommer svaret tillbaka? : i response variablen kommer svaret tillbaka från API anropet
 async function getWeather(cityName) {
 	let response = await fetch(                                                                             
 	`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&lang=en&appid=34832f1e903a4e490cfc9a2d3fffea23`
@@ -29,7 +31,7 @@ async function getWeather(cityName) {
   }
 }	
 
-
+//  Hur gör du för att tolka svaret?: Denna funktion tolkar svaret jag får från mitt API och blir till det man ser på hemsidan och det man söker efter
 function loadWeatherData(json) {
 	let city = document.querySelector("#city")
 	let cityName = json.name
@@ -45,6 +47,7 @@ function loadWeatherData(json) {
 }
 
 //funktion för API call till Foursquare
+// Här skickas HTTP requesten iväg
 async function getAttractions(cityName){
 	const clientID = "LCMY5F0SQZAV0S3OKB4K2SGI3K0I10QAZRRS4ARZFVVKJS2Y";
 	const clientSecret = "VFQ22BGXI43I5FHBLZSE5SOM1XWDKGOMMEMIO0L1UMDS5PY5";
